@@ -1,0 +1,675 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Plan de Pago TEB NYC</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --bg:#FAF7EF;
+    --surface:#FFFFFF;
+    --surface-2:#F2EBD9;
+    --ink:#1C1A2B;
+    --muted:#6E6656;
+    --line:#E3D9C2;
+    --navy:#101A3D;
+    --navy-2:#1B2A5C;
+    --gold:#A97A25;
+    --gold-ink:#5B4212;
+    --gold-bg:#F4E2B5;
+    --good:#2F7A4F;
+    --good-bg:#E3F1E7;
+    --warn:#B3432E;
+    --warn-bg:#F7E1DA;
+    --shadow: 0 1px 2px rgba(16,26,61,.06), 0 8px 24px rgba(16,26,61,.08);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12131C;
+      --surface:#1B1D2B;
+      --surface-2:#232538;
+      --ink:#F1ECDD;
+      --muted:#A99F87;
+      --line:#33354A;
+      --navy:#1B2A5C;
+      --navy-2:#26386F;
+      --gold:#D9AE55;
+      --gold-ink:#3A2C0C;
+      --gold-bg:#3C3115;
+      --good:#6FCB93;
+      --good-bg:#193621;
+      --warn:#E98A73;
+      --warn-bg:#3B211B;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12131C;
+    --surface:#1B1D2B;
+    --surface-2:#232538;
+    --ink:#F1ECDD;
+    --muted:#A99F87;
+    --line:#33354A;
+    --navy:#1B2A5C;
+    --navy-2:#26386F;
+    --gold:#D9AE55;
+    --gold-ink:#3A2C0C;
+    --gold-bg:#3C3115;
+    --good:#6FCB93;
+    --good-bg:#193621;
+    --warn:#E98A73;
+    --warn-bg:#3B211B;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    color-scheme: dark;
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+    padding-inline:20px;
+    padding-block:32px;
+  }
+  .app{ max-width:1040px; margin:0 auto; }
+
+  .eyebrow{
+    font-family:"Big Shoulders Display", ui-sans-serif, system-ui, sans-serif;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--gold-ink);
+    background:var(--gold-bg);
+    display:inline-block;
+    padding:5px 12px;
+    border-radius:999px;
+    font-size:13px;
+  }
+  h1{
+    font-family:"Big Shoulders Display", ui-sans-serif, system-ui, sans-serif;
+    font-weight:800;
+    font-size:clamp(34px,5vw,54px);
+    line-height:.98;
+    letter-spacing:-.01em;
+    margin:14px 0 6px;
+    color:var(--navy);
+    text-wrap:balance;
+  }
+  :root[data-theme="dark"] h1, @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) h1 { color:var(--ink); } }
+  .sub{
+    color:var(--muted);
+    font-size:16px;
+    max-width:60ch;
+  }
+
+  header.top{
+    display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between;
+    gap:16px; margin-bottom:28px;
+  }
+  .edicion-badge{
+    font-family:"Big Shoulders Display", sans-serif;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:.04em;
+    color:var(--navy);
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:10px 16px;
+    box-shadow:var(--shadow);
+    white-space:nowrap;
+  }
+  :root[data-theme="dark"] .edicion-badge, @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .edicion-badge{ color:var(--ink); } }
+  .edicion-badge b{ color:var(--gold-ink); background:var(--gold-bg); padding:2px 6px; border-radius:6px; margin-left:4px; }
+  :root[data-theme="dark"] .edicion-badge b, @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .edicion-badge b{ color:var(--gold); background:transparent; } }
+
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap:28px;
+    align-items:start;
+  }
+  @media (max-width:760px){ .grid{ grid-template-columns:1fr; } }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .card + .card{ margin-top:20px; }
+  .card h2{
+    font-family:"Big Shoulders Display", sans-serif;
+    font-weight:700;
+    font-size:20px;
+    letter-spacing:.01em;
+    margin:0 0 16px;
+    color:var(--navy);
+  }
+  :root[data-theme="dark"] .card h2, @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .card h2{ color:var(--ink); } }
+
+  label{ display:block; font-size:13px; font-weight:600; color:var(--muted); margin-bottom:6px; }
+  .field{ margin-bottom:18px; }
+  .field:last-child{ margin-bottom:0; }
+
+  input[type="text"]{
+    width:100%;
+    font:inherit;
+    font-size:16px;
+    color:var(--ink);
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:11px 12px;
+    font-variant-numeric:tabular-nums;
+  }
+  input:focus-visible{ outline:2px solid var(--gold); outline-offset:1px; }
+  input.has-error{ border-color:var(--warn); }
+
+  .field-error{
+    margin:8px 0 0; font-size:13px; font-weight:600; color:var(--warn);
+    background:var(--warn-bg); border-radius:8px; padding:8px 10px;
+  }
+  .field-error[hidden]{ display:none; }
+  .field-hint{ font-size:12.5px; color:var(--muted); margin-top:6px; }
+
+  .seg{ display:flex; flex-wrap:wrap; gap:8px; }
+  .seg button{
+    font:inherit; font-size:14px; font-weight:600;
+    padding:9px 14px; border-radius:999px;
+    border:1px solid var(--line);
+    background:var(--surface-2);
+    color:var(--ink);
+    cursor:pointer;
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .seg button[aria-pressed="true"]{
+    background:var(--navy); border-color:var(--navy); color:#fff;
+  }
+  .seg button:hover{ border-color:var(--gold); }
+
+  .toggle-btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font:inherit; font-size:15px; font-weight:600;
+    padding:10px 16px; border-radius:12px;
+    border:1px solid var(--line);
+    background:var(--surface-2); color:var(--ink);
+    cursor:pointer; width:100%; justify-content:space-between;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .toggle-btn[aria-pressed="true"]{
+    background:var(--good-bg); border-color:var(--good);
+  }
+  .toggle-pill{
+    width:38px; height:22px; border-radius:999px; background:var(--line);
+    position:relative; flex:none; transition:background .15s ease;
+  }
+  .toggle-pill::after{
+    content:""; position:absolute; top:2px; left:2px; width:18px; height:18px;
+    border-radius:50%; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.3);
+    transition:transform .15s ease;
+  }
+  .toggle-btn[aria-pressed="true"] .toggle-pill{ background:var(--good); }
+  .toggle-btn[aria-pressed="true"] .toggle-pill::after{ transform:translateX(16px); }
+  .toggle-btn:disabled{ opacity:.5; cursor:not-allowed; }
+  .toggle-btn:disabled:hover{ border-color:var(--line); }
+  .toggle-hint{ font-size:12.5px; color:var(--muted); margin-top:6px; }
+
+  .static-value{
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    font-size:16px; font-weight:700; color:var(--ink);
+    background:var(--surface-2); border:1px solid var(--line); border-radius:10px;
+    padding:11px 12px; font-variant-numeric:tabular-nums;
+  }
+  .static-tag{
+    font-size:11.5px; font-weight:600; letter-spacing:.03em; text-transform:uppercase;
+    color:var(--muted); background:var(--surface); border:1px solid var(--line);
+    border-radius:999px; padding:2px 8px;
+  }
+
+  .total-tile{
+    background:linear-gradient(155deg, var(--navy), var(--navy-2));
+    color:#fff; border-radius:16px; padding:24px; box-shadow:var(--shadow);
+  }
+  .total-tile .lbl{ font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#D8DEF2; font-weight:600; }
+  .total-tile .num{
+    font-family:"Big Shoulders Display", sans-serif; font-weight:800;
+    font-size:clamp(36px,6vw,48px); line-height:1; margin-top:8px;
+    font-variant-numeric:tabular-nums;
+    transition:opacity .15s ease;
+  }
+  @media (prefers-reduced-motion:reduce){ .total-tile .num{ transition:none; } }
+
+  .breakdown{ margin-top:16px; display:flex; flex-direction:column; gap:9px; }
+  .breakdown div{ display:flex; justify-content:space-between; font-size:14.5px; color:#DDE3F5; }
+  .breakdown div b{ font-variant-numeric:tabular-nums; color:#fff; font-weight:600; }
+  .breakdown .discount b{ color:#F3D98A; }
+  .breakdown-empty{ color:#DDE3F5; font-size:14px; line-height:1.5; }
+
+  .cuota-line{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:12px 0; border-top:1px dashed var(--line);
+  }
+  .cuota-line:first-of-type{ border-top:none; padding-top:0; }
+  .cuota-line .l{ color:var(--muted); font-size:14px; }
+  .cuota-line .v{ font-weight:700; font-variant-numeric:tabular-nums; }
+  .placeholder-note{ color:var(--muted); font-size:14px; line-height:1.5; }
+
+  .conditions{ font-size:14.5px; line-height:1.6; color:var(--ink); }
+  .conditions p{ margin:0 0 10px; }
+  .conditions p:last-child{ margin-bottom:0; }
+  .conditions .muted{ color:var(--muted); font-size:13px; }
+
+  .actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+  .btn{
+    font:inherit; font-weight:700; font-size:14.5px;
+    padding:12px 18px; border-radius:11px; border:1px solid transparent;
+    cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .1s ease, opacity .15s ease;
+  }
+  .btn:active{ transform:scale(.98); }
+  .btn-primary{ background:var(--gold); color:var(--gold-ink); }
+  .btn-primary:hover{ opacity:.9; }
+  .copied-note{ font-size:13px; color:var(--good); font-weight:600; align-self:center; }
+  .copied-note[hidden]{ display:none; }
+
+  .preview-area{
+    width:100%; resize:vertical; min-height:150px;
+    font-family:"Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+    font-size:14px; line-height:1.55; color:var(--ink);
+    background:var(--surface-2); border:1px solid var(--line); border-radius:10px;
+    padding:12px; white-space:pre-wrap;
+  }
+  .preview-area:focus-visible{ outline:2px solid var(--gold); outline-offset:1px; }
+
+  .footnote{ margin-top:22px; text-align:center; color:var(--muted); font-size:13px; }
+</style>
+
+<div class="app">
+  <header class="top">
+    <div>
+      <span class="eyebrow">TEB NYC · Tu Experiencia Broadway</span>
+      <h1>Calculá tu plan de pago</h1>
+      <p class="sub">Ingresá el monto de tu beca y elegí tu edición para ver el detalle de las cuotas.</p>
+    </div>
+    <div class="edicion-badge">Edición <b id="badgeEdicion">Enero 2027</b></div>
+  </header>
+
+  <div class="grid">
+    <!-- INPUTS -->
+    <div>
+      <div class="card">
+        <h2>Tu beca</h2>
+        <div class="field">
+          <label for="becaInput">Monto de tu beca (USD)</label>
+          <input type="text" id="becaInput" inputmode="decimal" placeholder="Ej: 1000" autocomplete="off">
+          <p class="field-error" id="becaError" hidden>Ese monto no es válido. Verificalo con TEB NYC.</p>
+          <p class="field-hint">Escribí el número que te informamos (o "Media beca" si te corresponde).</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Tu edición</h2>
+        <div class="field">
+          <label>Edición</label>
+          <div class="seg" id="segEdicion" role="group" aria-label="Edición"></div>
+        </div>
+        <div class="field">
+          <label>Valor del programa</label>
+          <div class="static-value">$3,750.00 <span class="static-tag">fijo</span></div>
+        </div>
+        <div class="field">
+          <button class="toggle-btn" id="btnAdicional" type="button" aria-pressed="false">
+            <span>
+              Descuento adicional del 5%
+              <div class="toggle-hint" id="hintAdicional">Solo aplica a la edición Enero 2027</div>
+            </span>
+            <span class="toggle-pill" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="field">
+          <label>Cantidad de cuotas</label>
+          <div class="static-value" id="cuotasFijo">4 cuotas <span class="static-tag">según edición</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div>
+      <div class="total-tile">
+        <div class="lbl">Total a pagar</div>
+        <div class="num" id="totalNum">—</div>
+        <div class="breakdown" id="breakdownBox"></div>
+      </div>
+
+      <div class="card">
+        <h2 id="cuotasTitle">Plan de cuotas</h2>
+        <div id="cuotasLines"></div>
+      </div>
+
+      <div class="card">
+        <h2>Condiciones</h2>
+        <div class="conditions" id="conditionsText"></div>
+      </div>
+
+      <div class="card" id="whatsappCard" hidden>
+        <h2>Texto para WhatsApp</h2>
+        <textarea id="fallbackArea" class="preview-area" readonly rows="8"></textarea>
+        <div class="actions">
+          <button class="btn btn-primary" id="btnCopiar" type="button">Copiar resumen</button>
+          <span class="copied-note" id="copiedNote" hidden>Copiado ✓</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="footnote">Cupos limitados — sujeto a disponibilidad. Todos los valores están expresados en dólares estadounidenses.</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var VALOR_PROGRAMA = 3750;
+  var FECHA_DESCUENTO = "2026-09-30";
+  var FECHA_PRIMER_PAGO = "2026-10-14";
+  var EDICION_DESCUENTO = "2027-01";
+  var BECAS_VALIDAS = [1875, 1500, 1200, 1000, 800, 600, 400];
+
+  var EDICIONES = [
+    { value: "2027-01", label: "Enero 2027" },
+    { value: "2027-07", label: "Julio 2027" },
+    { value: "2028-01", label: "Enero 2028" }
+  ];
+
+  var CUOTAS_POR_EDICION = {
+    "2027-01": { count: 4, firstFixed: null },
+    "2027-07": { count: 10, firstFixed: 400 },
+    "2028-01": { count: 15, firstFixed: 400 }
+  };
+
+  var STORAGE_KEY = "tebPlanPagosState_v1";
+
+  var state = {
+    edicion: "2027-01",
+    becaRaw: "",
+    adicional: false
+  };
+
+  function loadState(){
+    try{
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if(!raw) return;
+      var parsed = JSON.parse(raw);
+      Object.keys(state).forEach(function(k){
+        if(parsed[k] !== undefined) state[k] = parsed[k];
+      });
+    }catch(e){ /* storage unavailable — carry on with defaults */ }
+  }
+  function saveState(){
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch(e){ /* ignore */ }
+  }
+
+  var usd = new Intl.NumberFormat("en-US", { style:"currency", currency:"USD", minimumFractionDigits:2, maximumFractionDigits:2 });
+
+  function edicionLabel(value){
+    var found = EDICIONES.filter(function(e){ return e.value === value; })[0];
+    return found ? found.label : value;
+  }
+  function fmtDateShort(iso){
+    if(!iso) return "";
+    var parts = iso.split("-");
+    var y = parseInt(parts[0],10), m = parseInt(parts[1],10), d = parseInt(parts[2],10);
+    return d + "/" + m + "/" + String(y).slice(2);
+  }
+
+  function normalizeBeca(raw){
+    var s = String(raw || "").trim().toLowerCase();
+    if(s === "") return { state: "empty" };
+    if(s === "media beca" || s === "media"){
+      return { state: "ok", amount: 1875, label: "Media beca" };
+    }
+    var cleaned = s.replace(/[^0-9.]/g, "");
+    if(cleaned === "" || isNaN(Number(cleaned))){
+      return { state: "invalid" };
+    }
+    var num = Math.round(Number(cleaned) * 100) / 100;
+    if(BECAS_VALIDAS.indexOf(num) !== -1){
+      return { state: "ok", amount: num, label: usd.format(num) };
+    }
+    return { state: "invalid" };
+  }
+
+  function compute(becaAmount){
+    var base = Math.max(0, VALOR_PROGRAMA - becaAmount);
+    var descuentoAdicional = state.adicional ? base * 0.05 : 0;
+    var total = Math.max(0, base - descuentoAdicional);
+
+    var cfg = CUOTAS_POR_EDICION[state.edicion] || { count: 4, firstFixed: null };
+    var count = cfg.count;
+    var primera, resto, restoCount;
+    if(cfg.firstFixed){
+      primera = Math.min(cfg.firstFixed, total);
+      restoCount = count - 1;
+      resto = restoCount > 0 ? (total - primera) / restoCount : 0;
+    } else {
+      primera = total / count;
+      resto = primera;
+      restoCount = count - 1;
+    }
+
+    return {
+      becaAmount: becaAmount, base: base, descuentoAdicional: descuentoAdicional, total: total,
+      count: count, primera: primera, resto: resto, restoCount: restoCount, firstFixed: !!cfg.firstFixed
+    };
+  }
+
+  // ---- build edición segmented control ----
+  var segEdicion = document.getElementById("segEdicion");
+  EDICIONES.forEach(function(ed){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.textContent = ed.label;
+    b.setAttribute("aria-pressed", String(ed.value === state.edicion));
+    b.addEventListener("click", function(){
+      state.edicion = ed.value;
+      if(state.edicion !== EDICION_DESCUENTO){ state.adicional = false; }
+      Array.prototype.forEach.call(segEdicion.children, function(btn, i){
+        btn.setAttribute("aria-pressed", String(EDICIONES[i].value === state.edicion));
+      });
+      els.btnAdicional.setAttribute("aria-pressed", String(state.adicional));
+      render();
+    });
+    segEdicion.appendChild(b);
+  });
+
+  var els = {
+    becaInput: document.getElementById("becaInput"),
+    becaError: document.getElementById("becaError"),
+    btnAdicional: document.getElementById("btnAdicional"),
+    hintAdicional: document.getElementById("hintAdicional"),
+    cuotasFijo: document.getElementById("cuotasFijo"),
+    badgeEdicion: document.getElementById("badgeEdicion"),
+    totalNum: document.getElementById("totalNum"),
+    breakdownBox: document.getElementById("breakdownBox"),
+    cuotasTitle: document.getElementById("cuotasTitle"),
+    cuotasLines: document.getElementById("cuotasLines"),
+    conditionsText: document.getElementById("conditionsText"),
+    whatsappCard: document.getElementById("whatsappCard"),
+    btnCopiar: document.getElementById("btnCopiar"),
+    copiedNote: document.getElementById("copiedNote"),
+    fallbackArea: document.getElementById("fallbackArea")
+  };
+
+  function buildSummaryText(c){
+    var lines = [];
+    lines.push("*Plan de pagos*");
+    lines.push("Edición " + edicionLabel(state.edicion) + " – TEB NYC");
+    lines.push("");
+    lines.push("Valor del programa: " + usd.format(VALOR_PROGRAMA));
+    lines.push("Beca aplicada: -" + usd.format(c.becaAmount));
+    if(state.adicional){
+      lines.push("Descuento adicional 5%: -" + usd.format(c.descuentoAdicional));
+    }
+    lines.push("*Total a pagar: " + usd.format(c.total) + "*");
+    lines.push("");
+    lines.push("Cantidad de cuotas: " + c.count);
+    lines.push("Primera cuota (inscripción): " + usd.format(c.primera));
+    if(c.restoCount > 0){
+      lines.push((c.firstFixed ? "Cuotas 2 a " + c.count : "Pago por cada cuota") + ": " + usd.format(c.resto));
+    }
+    lines.push("");
+    lines.push("_Condiciones_");
+    lines.push("- El descuento del 5% solo está disponible para la edición " + edicionLabel(EDICION_DESCUENTO) + ": inscripción y primer pago antes del " + fmtDateShort(FECHA_DESCUENTO) + ".");
+    lines.push("- Para confirmar la inscripción y la beca, el primer pago debe estar hecho antes del " + fmtDateShort(FECHA_PRIMER_PAGO) + ".");
+    lines.push("- Todos los valores están expresados en dólares estadounidenses.");
+    lines.push("");
+    lines.push("Cupos limitados, sujeto a disponibilidad.");
+    return lines.join("\n");
+  }
+
+  function render(){
+    var res = normalizeBeca(state.becaRaw);
+    var ready = res.state === "ok";
+
+    var descuentoDisponible = state.edicion === EDICION_DESCUENTO;
+    els.badgeEdicion.textContent = edicionLabel(state.edicion);
+    els.btnAdicional.disabled = !descuentoDisponible;
+    els.btnAdicional.setAttribute("aria-disabled", String(!descuentoDisponible));
+    els.hintAdicional.textContent = descuentoDisponible
+      ? "Válido inscribiéndote y pagando antes del " + fmtDateShort(FECHA_DESCUENTO)
+      : "Solo disponible para la edición " + edicionLabel(EDICION_DESCUENTO);
+
+    var cfgCount = (CUOTAS_POR_EDICION[state.edicion] || { count: 4 }).count;
+    els.cuotasFijo.innerHTML = cfgCount + " cuotas <span class=\"static-tag\">según edición</span>";
+    els.cuotasTitle.textContent = "Plan de cuotas para la edición de " + edicionLabel(state.edicion);
+
+    if(!ready){
+      els.totalNum.textContent = "—";
+      els.breakdownBox.innerHTML = "<div class=\"breakdown-empty\">Ingresá el monto de tu beca para ver el total.</div>";
+      els.cuotasLines.innerHTML = "<div class=\"placeholder-note\">Completá el monto de tu beca para ver el detalle de las cuotas.</div>";
+      els.whatsappCard.hidden = true;
+      els.fallbackArea.value = "";
+    } else {
+      var c = compute(res.amount);
+      els.totalNum.textContent = usd.format(c.total);
+
+      var rows = "";
+      rows += "<div><span>Valor del programa</span><b>" + usd.format(VALOR_PROGRAMA) + "</b></div>";
+      rows += "<div><span>Beca aplicada</span><b>− " + usd.format(c.becaAmount) + "</b></div>";
+      if(state.adicional){
+        rows += "<div class=\"discount\"><span>Descuento adicional 5%</span><b>− " + usd.format(c.descuentoAdicional) + "</b></div>";
+      }
+      els.breakdownBox.innerHTML = rows;
+
+      els.cuotasLines.innerHTML = "";
+      var lineCantidad = document.createElement("div");
+      lineCantidad.className = "cuota-line";
+      lineCantidad.innerHTML = "<span class=\"l\">Cantidad de cuotas</span><span class=\"v\">" + c.count + "</span>";
+      var linePrimera = document.createElement("div");
+      linePrimera.className = "cuota-line";
+      linePrimera.innerHTML = "<span class=\"l\">Primera cuota (inscripción)</span><span class=\"v\">" + usd.format(c.primera) + "</span>";
+      els.cuotasLines.appendChild(lineCantidad);
+      els.cuotasLines.appendChild(linePrimera);
+      if(c.restoCount > 0){
+        var lineResto = document.createElement("div");
+        lineResto.className = "cuota-line";
+        var restoLabel = c.firstFixed ? ("Cuotas 2 a " + c.count) : "Pago por cada cuota";
+        lineResto.innerHTML = "<span class=\"l\">" + restoLabel + "</span><span class=\"v\">" + usd.format(c.resto) + "</span>";
+        els.cuotasLines.appendChild(lineResto);
+      }
+
+      els.whatsappCard.hidden = false;
+      els.fallbackArea.value = buildSummaryText(c);
+    }
+
+    var p1 = document.createElement("p");
+    p1.innerHTML = "El descuento del <strong>5%</strong> solo está disponible para la edición <strong>" + edicionLabel(EDICION_DESCUENTO) + "</strong>: hay que inscribirse y hacer el primer pago antes del <strong>" + fmtDateShort(FECHA_DESCUENTO) + "</strong>.";
+    var p2 = document.createElement("p");
+    p2.innerHTML = "Para confirmar la inscripción y asegurar la beca otorgada, el primer pago debe realizarse antes del <strong>" + fmtDateShort(FECHA_PRIMER_PAGO) + "</strong>.";
+    var p3 = document.createElement("p");
+    p3.className = "muted";
+    p3.textContent = "Todos los valores están expresados en dólares estadounidenses.";
+    els.conditionsText.innerHTML = "";
+    els.conditionsText.appendChild(p1);
+    els.conditionsText.appendChild(p2);
+    els.conditionsText.appendChild(p3);
+
+    saveState();
+  }
+
+  // ---- wire inputs ----
+  els.becaInput.addEventListener("input", function(){
+    state.becaRaw = els.becaInput.value;
+    els.becaError.hidden = true;
+    els.becaInput.classList.remove("has-error");
+    render();
+  });
+  els.becaInput.addEventListener("blur", function(){
+    var res = normalizeBeca(state.becaRaw);
+    var invalid = res.state === "invalid";
+    els.becaError.hidden = !invalid;
+    els.becaInput.classList.toggle("has-error", invalid);
+  });
+  els.becaInput.addEventListener("keydown", function(ev){
+    if(ev.key === "Enter"){ els.becaInput.blur(); }
+  });
+
+  els.btnAdicional.addEventListener("click", function(){
+    if(state.edicion !== EDICION_DESCUENTO) return;
+    state.adicional = !state.adicional;
+    els.btnAdicional.setAttribute("aria-pressed", String(state.adicional));
+    render();
+  });
+
+  els.btnCopiar.addEventListener("click", function(){
+    var text = els.fallbackArea.value;
+
+    function showNote(msg, ms){
+      els.copiedNote.textContent = msg;
+      els.copiedNote.hidden = false;
+      setTimeout(function(){ els.copiedNote.hidden = true; }, ms || 2200);
+    }
+
+    function selectFallback(){
+      try{
+        els.fallbackArea.focus();
+        els.fallbackArea.select();
+        els.fallbackArea.setSelectionRange(0, text.length);
+      }catch(e){ /* selection unavailable — text is still visible to copy by hand */ }
+    }
+
+    function tryExecCommand(){
+      selectFallback();
+      var ok = false;
+      try{ ok = document.execCommand("copy"); }catch(e){ ok = false; }
+      if(ok){
+        showNote("Copiado ✓");
+      } else {
+        showNote("Seleccionado — copiá con Ctrl/Cmd+C", 3200);
+      }
+    }
+
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        showNote("Copiado ✓");
+      }, tryExecCommand);
+    } else {
+      tryExecCommand();
+    }
+  });
+
+  // ---- init ----
+  loadState();
+  if(state.edicion !== EDICION_DESCUENTO){ state.adicional = false; }
+  els.becaInput.value = state.becaRaw;
+  els.btnAdicional.setAttribute("aria-pressed", String(state.adicional));
+  Array.prototype.forEach.call(segEdicion.children, function(btn, i){
+    btn.setAttribute("aria-pressed", String(EDICIONES[i].value === state.edicion));
+  });
+
+  render();
+})();
+</script>
+
+</body></html>
