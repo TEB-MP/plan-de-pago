@@ -1,3 +1,4 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Plan de Pago TEB NYC</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap">
 <style>
@@ -328,7 +329,7 @@
         </div>
         <div class="field">
           <label>Cantidad de cuotas</label>
-          <div class="static-value" id="cuotasFijo">4 cuotas <span class="static-tag">según edición</span></div>
+          <div class="static-value" id="cuotasFijo">4 cuotas <span class="static-tag">para la edición de Enero 2027</span></div>
         </div>
       </div>
     </div>
@@ -382,9 +383,9 @@
   ];
 
   var CUOTAS_POR_EDICION = {
-    "2027-01": { count: 4, firstFixed: null },
-    "2027-07": { count: 10, firstFixed: 400 },
-    "2028-01": { count: 15, firstFixed: 400 }
+    "2027-01": 4,
+    "2027-07": 10,
+    "2028-01": 15
   };
 
   var STORAGE_KEY = "tebPlanPagosState_v1";
@@ -444,22 +445,12 @@
     var descuentoAdicional = state.adicional ? base * 0.05 : 0;
     var total = Math.max(0, base - descuentoAdicional);
 
-    var cfg = CUOTAS_POR_EDICION[state.edicion] || { count: 4, firstFixed: null };
-    var count = cfg.count;
-    var primera, resto, restoCount;
-    if(cfg.firstFixed){
-      primera = Math.min(cfg.firstFixed, total);
-      restoCount = count - 1;
-      resto = restoCount > 0 ? (total - primera) / restoCount : 0;
-    } else {
-      primera = total / count;
-      resto = primera;
-      restoCount = count - 1;
-    }
+    var count = CUOTAS_POR_EDICION[state.edicion] || 4;
+    var cuota = total / count;
 
     return {
       becaAmount: becaAmount, base: base, descuentoAdicional: descuentoAdicional, total: total,
-      count: count, primera: primera, resto: resto, restoCount: restoCount, firstFixed: !!cfg.firstFixed
+      count: count, cuota: cuota
     };
   }
 
@@ -513,10 +504,7 @@
     lines.push("*Total a pagar: " + usd.format(c.total) + "*");
     lines.push("");
     lines.push("Cantidad de cuotas: " + c.count);
-    lines.push("Primera cuota (inscripción): " + usd.format(c.primera));
-    if(c.restoCount > 0){
-      lines.push((c.firstFixed ? "Cuotas 2 a " + c.count : "Pago por cada cuota") + ": " + usd.format(c.resto));
-    }
+    lines.push("Pago por cada cuota: " + usd.format(c.cuota));
     lines.push("");
     lines.push("_Condiciones_");
     lines.push("- El descuento del 5% solo está disponible para la edición " + edicionLabel(EDICION_DESCUENTO) + ": inscripción y primer pago antes del " + fmtDateShort(FECHA_DESCUENTO) + ".");
@@ -539,8 +527,8 @@
       ? "Válido inscribiéndote y pagando antes del " + fmtDateShort(FECHA_DESCUENTO)
       : "Solo disponible para la edición " + edicionLabel(EDICION_DESCUENTO);
 
-    var cfgCount = (CUOTAS_POR_EDICION[state.edicion] || { count: 4 }).count;
-    els.cuotasFijo.innerHTML = cfgCount + " cuotas <span class=\"static-tag\">según edición</span>";
+    var cfgCount = CUOTAS_POR_EDICION[state.edicion] || 4;
+    els.cuotasFijo.innerHTML = cfgCount + " cuotas <span class=\"static-tag\">para la edición de " + edicionLabel(state.edicion) + "</span>";
     els.cuotasTitle.textContent = "Plan de cuotas para la edición de " + edicionLabel(state.edicion);
 
     if(!ready){
@@ -565,18 +553,11 @@
       var lineCantidad = document.createElement("div");
       lineCantidad.className = "cuota-line";
       lineCantidad.innerHTML = "<span class=\"l\">Cantidad de cuotas</span><span class=\"v\">" + c.count + "</span>";
-      var linePrimera = document.createElement("div");
-      linePrimera.className = "cuota-line";
-      linePrimera.innerHTML = "<span class=\"l\">Primera cuota (inscripción)</span><span class=\"v\">" + usd.format(c.primera) + "</span>";
+      var lineCuota = document.createElement("div");
+      lineCuota.className = "cuota-line";
+      lineCuota.innerHTML = "<span class=\"l\">Pago por cada cuota</span><span class=\"v\">" + usd.format(c.cuota) + "</span>";
       els.cuotasLines.appendChild(lineCantidad);
-      els.cuotasLines.appendChild(linePrimera);
-      if(c.restoCount > 0){
-        var lineResto = document.createElement("div");
-        lineResto.className = "cuota-line";
-        var restoLabel = c.firstFixed ? ("Cuotas 2 a " + c.count) : "Pago por cada cuota";
-        lineResto.innerHTML = "<span class=\"l\">" + restoLabel + "</span><span class=\"v\">" + usd.format(c.resto) + "</span>";
-        els.cuotasLines.appendChild(lineResto);
-      }
+      els.cuotasLines.appendChild(lineCuota);
 
       els.whatsappCard.hidden = false;
       els.fallbackArea.value = buildSummaryText(c);
@@ -670,3 +651,5 @@
   render();
 })();
 </script>
+
+</body></html>
